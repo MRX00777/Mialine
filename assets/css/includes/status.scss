@@ -1,0 +1,48 @@
+
+
+.status{
+    display: block;
+    width: 180px;
+    position: relative;
+
+    &__visible{
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        color: var(--black);
+        gap: 5px;
+        cursor: pointer;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &__toggle{
+        position: absolute;
+        width: 100%;
+        padding: 25px 20px;
+        background: #FAFAFB;
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        z-index: 9;
+        top: 33px;
+        left: 0;
+        font-size: 15px;
+        color: var(--black);
+
+        &.active{
+            display: flex;
+        }
+
+        &-item{
+            transition: 300ms;
+
+            &:hover{
+                color: red;
+            }
+        }
+    }
+}

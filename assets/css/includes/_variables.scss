@@ -1,0 +1,29 @@
+:root {
+	--black: #0D0E0F;
+	--white: #ffffff;
+	--grey: #E4E4E4;
+	--red: #ff3f40;
+	--verygrey: #707070;
+	--modblack: #1E1E1E;
+	--redhover: #E12A2B ;
+	--swiper-theme-color: var(--black) !important;
+}
+
+.arr {
+	font-size: 1.2rem;
+	width: 24px;
+	height: 24px;
+	transition: 0.3s ease;
+	&-toBottom {
+		transform: rotate(90deg);
+	}
+	&-toTop {
+		transform: rotate(-90deg);
+	}
+	&-toLeft {
+		transform: rotate(180deg);
+	}
+	&-toRight {
+		transform: rotate(0deg);
+	}
+}

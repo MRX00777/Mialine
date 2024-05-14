@@ -1,0 +1,142 @@
+main.main {
+    // margin-top: 155px;
+    margin-bottom: 50px;
+}
+
+.questions {
+
+    &-title {
+        color: var(--black);
+        font-family: HelveticaNeueCyr;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 550;
+        line-height: normal;
+        margin-bottom: 40px;
+        margin-top: 20px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        gap: 30px;
+
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+
+            &__btn {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 20px;
+                padding: 15px 15px 15px 20px;
+                border: 1px solid var(--grey);
+                cursor: pointer;
+
+                &__text {
+                    color: #000;
+                    font-family: HelveticaNeueCyr;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 550;
+                    line-height: normal;
+                    text-align: left;
+                }
+
+                img {
+                    transform: rotate(180deg);
+                }
+            }
+
+            &__content {
+                padding: 20px;
+                border: 1px solid var(--grey);
+                border-top: none;
+                display: none;
+
+
+                p {
+                    color: var(--black);
+                    font-family: HelveticaNeueCyr;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .questions-title{
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 800px) {
+    .questions-title{
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 620px) {
+    .questions-title{
+        margin-bottom: 25px;
+        font-size: 23px;
+    }
+
+    .questions__content__item__btn__text {
+        font-size: 15px;
+    }
+
+    .questions__content__item__btn{
+        padding: 15px;
+    }
+
+    .questions__content{
+        gap: 25px;
+    }
+}
+
+@media (max-width: 575px) {
+    .questions-title{
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 520px) {
+    .questions-title{
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 450px) {
+    .questions-title{
+        margin-bottom: 20px;
+        font-size: 21px;
+    }
+
+    .questions__content__item__btn__text {
+        font-size: 14px;
+    }
+
+    .questions__content__item__content {
+        padding: 15px;
+    }
+
+    .questions__content{
+        gap: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .questions-title{
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+}

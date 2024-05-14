@@ -1,0 +1,352 @@
+.mainSection {
+	margin-bottom: 60px;
+	&__wrapper {
+		@include containerFluid;
+		&_container {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+	&__title {
+		display: flex;
+		max-width: max-content;
+		align-items: center;
+		gap: 10px;
+		margin-bottom: 35px;
+		padding: 0 30px;
+		@include hoverRed;
+		h2 {
+			font-size: 1.2rem;
+			font-style: normal;
+			font-weight: 550;
+			line-height: normal;
+		}
+		svg {
+			@include size(20px);
+			transform: translateY(2px);
+		}
+	}
+	.swiper {
+		&-slide {
+			width: auto;
+			height: auto;
+		}
+		@include swiperBtnsLightly;
+	}
+	&.swiperLinear {
+		.swiper-wrapper {
+			transition-timing-function: linear;
+		}
+	}
+}
+
+.prodcutCard {
+	width: 355px;
+	position: relative;
+	display: flex;
+	height: 100%;
+	--prodcutCardmainColor: var(--black);
+	&__buttons {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 10px;
+		z-index: 6;
+		inset: 15px;
+		width: calc(100% - 30px);
+		bottom: auto;
+		&_item {
+			@include flex-center;
+			@include size(40px);
+			border-radius: 50%;
+			background: var(--white);
+			color: var(--black);
+			cursor: pointer;
+			transition: 0.3s ease;
+			svg {
+				transition: 0.3s ease;
+				@include size(20px);
+			}
+			&--toFavorites {
+				svg {
+					stroke: var(--black);
+					fill: transparent;
+				}
+				&:hover {
+					svg {
+						stroke: var(--red);
+					}
+				}
+				&.prodcutCard__buttons_item--active {
+					svg {
+						stroke: var(--red);
+						fill: var(--red);
+					}
+					animation: scale 0.3s ease;
+					&:hover {
+						svg {
+							scale: 1.1;
+						}
+					}
+				}
+			}
+			&--toCart {
+				&:hover {
+					color: var(--red);
+				}
+				&.prodcutCard__buttons_item--active {
+					background: var(--red);
+					color: var(--white);
+					&:hover {
+						svg {
+							scale: 1.1;
+						}
+					}
+				}
+			}
+		}
+	}
+	&__item {
+		@include flex-column;
+		flex: 1;
+		justify-content: space-between;
+		@include maincardBorder;
+		&_img {
+			&.img {
+				z-index: 5;
+				height: auto;
+				img {
+					width: 100%;
+					height: 100%;
+					/* aspect-ratio: 1/0.95; */
+				}
+			}
+		}
+		&_name {
+			padding: 15px 20px 15px;
+			p {
+				color: var(--prodcutCardmainColor);
+				@include textOverflow(2);
+				font-size: 0.9rem;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 150%; /* 27px */
+				transition: 0.3s ease;
+			}
+		}
+		&_brand {
+			color: #b2b2b2;
+			font-size: 0.65rem;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 150%; /* 19.5px */
+			letter-spacing: 0.65px;
+			margin-bottom: 6px;
+		}
+		&_bottom {
+			padding: 0 25px 25px;
+		}
+		&_price {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			row-gap: 0;
+			column-gap: 9px;
+			&_item {
+				font-size: 0.7rem;
+				font-style: normal;
+				font-weight: 550;
+				line-height: 150%; /* 21px */
+				letter-spacing: 0.7px;
+				&-old {
+					color: #b2b2b2;
+					position: relative;
+					&::before {
+						content: "";
+						position: absolute;
+						top: 50%;
+						left: 0;
+						width: 100%;
+						height: 1px;
+						transform: translateY(-50%);
+						background: #b2b2b2;
+					}
+				}
+			}
+		}
+		&:hover {
+			--prodcutCardmainColor: var(--red);
+		}
+	}
+}
+
+.brandsCard {
+	display: block;
+	width: 235px;
+	cursor: pointer;
+	@include maincardBorder;
+	&__img {
+		@include flex-center;
+		img {
+			aspect-ratio: 2/1;
+			object-fit: contain;
+		}
+	}
+}
+
+.news {
+	.prodcutCard {
+		@include itemColumnWidth(4, 0px);
+		&:nth-child(1) {
+			.prodcutCard__item {
+				border-left: 1px solid var(--grey);
+			}
+		}
+		&__item {
+			&_name {
+				p {
+					-webkit-line-clamp: 3;
+				}
+			}
+			&_img {
+				padding: 20px 20px 0;
+			}
+		}
+	}
+}
+
+@media (max-width: 991.98px) {
+	.mainSection {
+		margin-bottom: 50px;
+		&__title {
+			margin-bottom: 25px;
+			padding: 0 20px;
+			@include hoverRed;
+		}
+		.swiper-button-next,
+		.swiper-button-prev {
+			display: none;
+		}
+	}
+	.news {
+		.prodcutCard {
+			@include itemColumnWidth(2, 0px);
+			&:nth-child(n + 3),
+			&:nth-child(n + 4) {
+				.prodcutCard__item {
+					border-top: none;
+				}
+			}
+			&__item {
+				&_img {
+					padding: 15px 15px 0;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 767.98px) {
+	.prodcutCard {
+		width: 300px;
+	}
+}
+
+@media (max-width: 575.98px) {
+	.mainSection {
+		margin-bottom: 35px;
+		&__title {
+			margin-bottom: 25px;
+			h2 {
+				font-size: 1rem;
+			}
+		}
+	}
+	.prodcutCard {
+		width: 250px;
+		&__item {
+			&_name {
+				padding: 10px 20px 10px;
+				p {
+					font-size: 0.8rem;
+				}
+			}
+			&_brand {
+				font-size: 0.6rem;
+			}
+			&_bottom {
+				padding: 0 20px 15px !important;
+			}
+		}
+	}
+	.news {
+		.prodcutCard {
+			@include itemColumnWidth(1, 0px);
+			&:nth-child(1) {
+				.prodcutCard__item {
+					border-top: 1px solid var(--grey);
+				}
+			}
+			&__item {
+				border: 1px solid var(--grey);
+				border-top: none;
+				border-right: none;
+				&_img {
+					padding: 14px 20px 0;
+					height: 350px !important;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 475.98px) {
+	.prodcutCard {
+		width: 100%;
+		&__buttons {
+			inset: 10px;
+			width: calc(100% - 20px);
+			bottom: auto;
+			&_item {
+				@include size(40px);
+				svg {
+					@include size(20px);
+				}
+
+				
+			}
+		}
+		&__item {
+			&_name {
+				padding: 10px 20px 4px;
+				p {
+					@include textOverflow(2);
+					font-size: 0.7rem;
+				}
+			}
+			&_brand {
+				font-size: 0.65rem;
+			}
+			&_bottom {
+				padding: 0 20px 10px;
+			}
+			&_price {
+				flex-direction: column;
+				align-items: flex-start;
+			}
+
+			&_img {
+				padding: 14px 20px 0;
+				height: 200px !important;
+			}
+		}
+	}
+}
+
+@media (max-width: 400px) {
+	.news .prodcutCard__item_img {
+		padding: 14px 20px 0;
+		height: 250px !important;
+	}
+}

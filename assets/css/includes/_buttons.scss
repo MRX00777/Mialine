@@ -1,0 +1,84 @@
+.btn {
+	padding: 15px 30px;
+	color: #fff;
+	font-size: 0.8rem;
+	font-weight: 700;
+	line-height: normal;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 0.3s ease;
+	border: 1px solid var(--black);
+	background: var(--black);
+	cursor: pointer;
+	border-radius: 10px;
+	svg {
+		fill: var(--white);
+		transition: 0.3s ease;
+	}
+	&.w-100 {
+		width: 100%;
+	}
+	&:hover {
+		background: transparent;
+		color: var(--black);
+		svg {
+			fill: var(--black);
+		}
+	}
+	&.whiteBg-hover {
+		&:hover {
+			background: transparent;
+			border-color: #fff;
+			color: #fff;
+		}
+	}
+	&.trans {
+		background: transparent;
+		border-color: #fff;
+		color: #fff;
+		&:hover {
+			background: var(--black);
+			color: var(--white);
+			border-color: var(--black);
+		}
+	}
+	&.title-btn {
+		padding: 14px 26px;
+		font-size: 0.8rem;
+		background: var(--white);
+		color: var(--black);
+		border-color: #ffffff;
+		&:hover {
+			background: var(--black);
+			color: var(--white);
+			border-color: var(--black);
+		}
+	}
+	&.white {
+		background: var(--white);
+		color: var(--black);
+		border-color: #ffffff;
+		&:hover {
+			background: var(--black);
+			color: var(--white);
+			border-color: var(--black);
+		}
+	}
+}
+
+.btn__wrapper {
+	display: flex;
+	justify-content: center;
+	margin-top: 35px;
+}
+
+@media (max-width: 575.98px) {
+	.btn {
+		width: 100%;
+		padding: 16px 20px;
+	}
+	.btn__wrapper {
+		margin-top: 20px;
+	}
+}

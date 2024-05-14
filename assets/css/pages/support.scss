@@ -1,0 +1,215 @@
+main.main {
+    // margin-top: 115px;
+    margin-bottom: 50px;
+}
+
+h1 {
+    color: var(--black);
+    font-family: HelveticaNeueCyr;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 550;
+    line-height: normal;
+    margin: 20px 0 40px 0;
+}
+
+.support {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    &__top {
+        padding: 30px 30px 25px 30px;
+        border: 1px solid var(--grey);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 25px;
+
+        &-text {
+            color: var(--black);
+            font-family: HelveticaNeueCyr;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 550;
+            line-height: 150%;
+        }
+
+        &-link {
+            padding: 15px 20px;
+            width: 260px;
+            background: var(--red);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            transition: 300ms;
+            cursor: pointer;
+
+            &:hover {
+                background: var(--redhover);
+            }
+
+            p {
+                color: var(--white);
+                font-family: HelveticaNeueCyr;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 550;
+                line-height: 150%;
+            }
+
+            svg {
+                width: 16px;
+                height: 16px;
+
+                path {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        padding: 30px;
+        border: 1px solid var(--grey);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 25px;
+
+        &-text {
+            color: var(--black);
+            font-family: HelveticaNeueCyr;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 550;
+            line-height: normal;
+        }
+
+        &__row {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            row-gap: 20px;
+            column-gap: 30px;
+            flex-wrap: wrap;
+
+            &-tel {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+
+                &:hover {
+                    svg {
+                        color: var(--red);
+                    }
+
+                    p {
+                        color: var(--red);
+                    }
+                }
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    transition: 300ms;
+                }
+
+                p {
+                    color: var(--black);
+                    text-align: center;
+                    font-family: HelveticaNeueCyr;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    letter-spacing: 0.7px;
+                    transition: 300ms;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 1000px) {}
+
+@media (max-width: 800px) {}
+
+@media (max-width: 620px) {
+    h1 {
+        font-size: 23px;
+    }
+
+    .support__top {
+        padding: 20px;
+    }
+
+    .support__top-text {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 520px) {
+    h1 {
+        margin: 10px 0 30px;
+        font-size: 22px;
+    }
+
+    .support__top-text {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 450px) {
+    h1 {
+        margin: 10px 0 25px;
+        font-size: 21px;
+    }
+
+    .support__top {
+        padding: 20px 15px;
+    }
+
+    .support__top-text {
+        font-size: 17px;
+    }
+
+    .support__top-link {
+        width: 100%;
+    }
+
+    .support__top{
+        gap: 20px;
+    }
+
+    .support__bottom{
+        padding: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        margin: 10px 0 30px;
+        font-size: 20px;
+    }
+
+    .support__top-text {
+        font-size: 16px;
+    }
+
+    .support__top{
+        gap: 15px;
+    }
+
+    .support__bottom{
+        padding: 20px 15px;
+    }
+}

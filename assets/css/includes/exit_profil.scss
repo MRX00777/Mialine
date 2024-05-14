@@ -1,0 +1,255 @@
+// modal name edit
+
+.popup__exit{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background: rgba(50, 51, 54, 0.70);
+    top: -110%;
+    left: 0;
+    z-index: -1;
+
+    opacity: 1;
+    transition: 300ms;
+}
+
+.popup__exit.modal-show {
+    opacity: 1;
+    top: 0;
+    z-index: 999;
+}
+
+.popup__body-exit {
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 30px;
+}
+
+.popup__content__exit{
+    background: var(--white);
+    max-width: 910px;
+    height: 320px;
+
+    position: relative;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: black;
+
+    .constracts__name-close {
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+
+        path {
+            transition: 300ms;
+        }
+
+        &:hover {
+            path {
+                fill: var(--red);
+            }
+        }
+    }
+
+}
+
+.popup__form {
+    width: 100%;
+}
+
+.info__fill_input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.pupup__title {
+    color: var(--black);
+    color: #000;
+    font-family: HelveticaNeueCyr;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 550;
+    line-height: normal;
+    text-align: center;
+}
+
+.popup__close-tel,
+.popup__close-name {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+
+.modal__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.balance__btn-reset {
+    display: block;
+    background: #FAFAFB;
+    padding: 15px 40px;
+    text-align: center;
+    color: var(--black);
+    font-family: HelveticaNeueCyr;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 550;
+    line-height: 150%;
+    border-bottom: 1px white dashed;
+    transition: 300ms;
+    cursor: pointer;
+    width: 150px;
+
+    &:hover {
+        color: var(--red);
+    }
+}
+
+.balance__btn-save {
+    color: var(--white);
+    font-family: HelveticaNeueCyr;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 550;
+    line-height: 150%;
+    padding: 15px 40px;
+    background: var(--red);
+    width: max-content;
+    display: inline-block;
+    width: 150px;
+    cursor: pointer;
+    transition: 300ms;
+
+    &:hover{
+        background: var(--redhover);
+    }
+}
+
+.image__add__row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    overflow-y: scroll;
+    color: 16px;
+
+    #imagePreview {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+        overflow-y: scroll;
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    input {
+        font-size: 16px;
+        background: #000;
+        color: transparent !important;
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+.info__fill_input .input {
+    margin-bottom: 0;
+}
+
+
+@media (max-width: 1000px) {}
+
+@media (max-width: 800px) {}
+
+@media (max-width: 620px) {
+    .popup__body-exit {
+        padding: 20px 20px;
+    }
+
+    .popup__content__exit{
+        padding: 20px;
+        gap: 50px;
+    }
+
+    .popup__content__exit .constracts__name-close {
+        right: 20px;
+        top: 20px;
+        width: 22px;
+        height: 22px;
+
+        svg {
+            width: 22px;
+            height: 22px;
+        }
+    }
+
+    .pupup__title {
+        font-size: 22px;
+    }
+
+    .info__fill_input .input p{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 450px) {
+    .popup__content__exit{
+        gap: 30px;
+    }
+
+    .popup__content__exit .constracts__name-close {
+        width: 22px;
+        height: 22px;
+
+        svg {
+            width: 22px;
+            height: 22px;
+        }
+    }
+
+
+    .info__fill_input .input p{
+        font-size: 14px;
+    }
+
+    .modal__buttons{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .balance__btn-reset{
+        width: 100%;
+        padding: 12px 40px;
+    }
+
+    .balance__btn-save{
+        width: 100%;
+        padding: 12px 40px;
+    }
+
+    .info__fill_input .input textarea{
+        font-size: 14px;
+    }
+}

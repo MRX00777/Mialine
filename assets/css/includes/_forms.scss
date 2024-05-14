@@ -1,0 +1,79 @@
+.form {
+	.label {
+		font-size: 0.8rem;
+		font-weight: 500;
+		margin-bottom: 6px;
+		sup {
+			color: var(--red);
+			font-size: 1.2em;
+			font-weight: 500;
+			line-height: 100%;
+			top: 0;
+			left: -0.2em;
+		}
+	}
+	.input {
+		position: relative;
+		width: 100%;
+		input,
+		select,
+		textarea {
+			display: flex;
+			width: 100%;
+			padding: 17px 22px;
+			border-radius: 10px;
+			background: #f8f8f9;
+			border: 1px solid #cbccce;
+			resize: none;
+			outline: none;
+			color: var(--black);
+			font-size: 0.7rem;
+			font-weight: 500;
+			transition: 0.3s ease;
+			&::placeholder {
+				color: #6f798d;
+			}
+			&:focus {
+				border-color: var(--black);
+			}
+			&:hover {
+				border-color: var(--black);
+			}
+		}
+	}
+	.iti {
+		width: 100%;
+		&__flag-container {
+			background: transparent;
+		}
+		&__selected-dial-code {
+			color: #fff;
+			font-size: 0.7rem;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+		}
+		&__arrow {
+			border-top-color: #fff;
+		}
+	}
+}
+
+@media (max-width: 575.98px) {
+	.form {
+		.input {
+			p {
+				font-size: 14px;
+				margin-bottom: 6px;
+			}
+			input,
+			textarea,
+			select {
+				padding: 12px;
+			}
+			&__clue {
+				text-align: center;
+			}
+		}
+	}
+}
